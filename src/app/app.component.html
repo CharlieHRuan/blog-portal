@@ -1,0 +1,67 @@
+<mat-toolbar color="primary">
+  <span>My Blog</span>
+  <span class="example-spacer"></span>
+  <button mat-button [matMenuTriggerFor]="menu">前端</button>
+  <mat-menu #menu="matMenu">
+    <button mat-menu-item>Vue</button>
+    <button mat-menu-item>Angular</button>
+    <button mat-menu-item>Ast</button>
+  </mat-menu>
+  <button mat-button [matMenuTriggerFor]="menu">后端</button>
+  <mat-menu #menu="matMenu">
+    <button mat-menu-item>CSharp</button>
+  </mat-menu>
+
+  <button mat-button>关于我</button>
+
+  <mat-slide-toggle>
+    dark mode
+  </mat-slide-toggle>
+
+  <button mat-icon-button [matMenuTriggerFor]="menu2" aria-label="Example icon-button with a menu">
+    <mat-icon>more_vert</mat-icon>
+  </button>
+  <mat-menu #menu2="matMenu">
+    <button mat-menu-item>
+      <mat-icon>dialpad</mat-icon>
+      <span>Redial</span>
+    </button>
+    <button mat-menu-item disabled>
+      <mat-icon>voicemail</mat-icon>
+      <span>Check voice mail</span>
+    </button>
+
+    <button mat-menu-item>
+      <mat-icon>notifications_off</mat-icon>
+      <span>Disable alerts</span>
+    </button>
+  </mat-menu>
+
+
+</mat-toolbar>
+
+<mat-drawer-container class="container" autosize>
+  <mat-drawer #drawer class="sidenav" mode="side">
+    <p>Auto-resizing sidenav</p>
+    <p *ngIf="showFiller">Lorem, ipsum dolor sit amet consectetur.</p>
+    <button (click)="showFiller = !showFiller" mat-raised-button>
+      Toggle extra text
+    </button>
+  </mat-drawer>
+
+  <div class="sidenav-content">
+    <button type="button" mat-button (click)="drawer.toggle()">
+      Toggle sidenav
+    </button>
+  </div>
+  <mat-nav-list>
+    <a mat-list-item="" routerlinkactive="docs-component-viewer-sidenav-item-selected"
+      class="mat-list-item mat-focus-indicator ng-tns-c136-826 ng-star-inserted" aria-current="false"
+      href="/components/autocomplete">
+      <div class="mat-list-item-content">
+        <div mat-ripple="" class="mat-ripple mat-list-item-ripple"></div>
+        <div class="mat-list-text"></div> 自动完成&nbsp;<small>Autocomplete</small>
+      </div>
+    </a>
+  </mat-nav-list>
+</mat-drawer-container>
